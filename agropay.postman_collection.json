@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "3e95b5bd-2663-460a-a2a4-a151516150f3",
+		"name": "agropay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createWallet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"overdraftLimit\":-11000\n}"
+				},
+				"url": {
+					"raw": "localhost:9099/wallets",
+					"host": [
+						"localhost"
+					],
+					"port": "9099",
+					"path": [
+						"wallets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 293.50,\n    \"type\": \"CREDIT\"\n}"
+				},
+				"url": {
+					"raw": "localhost:9099/wallets/1f681662-e94f-47ed-a514-fe6ff16e5188/transactions",
+					"host": [
+						"localhost"
+					],
+					"port": "9099",
+					"path": [
+						"wallets",
+						"1f681662-e94f-47ed-a514-fe6ff16e5188",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
