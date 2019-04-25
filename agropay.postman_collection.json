@@ -48,17 +48,113 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"amount\": 293.50,\n    \"type\": \"CREDIT\"\n}"
+					"raw": "{\n    \"amount\": 1000,\n    \"type\": \"DEBIT\"\n}"
 				},
 				"url": {
-					"raw": "localhost:9099/wallets/1f681662-e94f-47ed-a514-fe6ff16e5188/transactions",
+					"raw": "localhost:9099/wallets/54f0b0d2-3383-4997-a689-a8c81a4ea72d/transactions",
 					"host": [
 						"localhost"
 					],
 					"port": "9099",
 					"path": [
 						"wallets",
-						"1f681662-e94f-47ed-a514-fe6ff16e5188",
+						"54f0b0d2-3383-4997-a689-a8c81a4ea72d",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transactions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:9099/wallets/54f0b0d2-3383-4997-a689-a8c81a4ea72d/transactions",
+					"host": [
+						"localhost"
+					],
+					"port": "9099",
+					"path": [
+						"wallets",
+						"54f0b0d2-3383-4997-a689-a8c81a4ea72d",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteTransaction",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:9099/wallets/54f0b0d2-3383-4997-a689-a8c81a4ea72d/transactions",
+					"host": [
+						"localhost"
+					],
+					"port": "9099",
+					"path": [
+						"wallets",
+						"54f0b0d2-3383-4997-a689-a8c81a4ea72d",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBalance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 1000,\n    \"type\": \"DEBIT\"\n}"
+				},
+				"url": {
+					"raw": "localhost:9099/wallets/dbba495a-6fcf-4f8f-a3bc-dabfaec18424/transactions",
+					"host": [
+						"localhost"
+					],
+					"port": "9099",
+					"path": [
+						"wallets",
+						"dbba495a-6fcf-4f8f-a3bc-dabfaec18424",
 						"transactions"
 					]
 				}
