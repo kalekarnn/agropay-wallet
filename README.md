@@ -4,7 +4,7 @@ Steps :
 
 1. Import "agropay.postman_collection.json" in postman
 
-2. Create a wallet. Use "createWallet" from collection. 
+2. Use "createWallet" from collection for wallet creation. 
 
 3. Use "transaction" from collection for CREDIT and DEBIT transactions.
 
