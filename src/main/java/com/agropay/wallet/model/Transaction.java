@@ -1,5 +1,6 @@
 package com.agropay.wallet.model;
 
+import com.agropay.wallet.common.TransactionStatus;
 import com.agropay.wallet.common.TransactionType;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -22,6 +23,9 @@ public class Transaction {
     private TransactionType transactionType;
 
     @Column
+    private TransactionStatus status;
+
+    @Column
     private BigDecimal amount;
 
     @Column
@@ -30,8 +34,9 @@ public class Transaction {
     public Transaction() {
     }
 
-    public Transaction(TransactionType transactionType, BigDecimal amount, ZonedDateTime timestamp) {
+    public Transaction(TransactionType transactionType, TransactionStatus status, BigDecimal amount, ZonedDateTime timestamp) {
         this.transactionType = transactionType;
+        this.status = status;
         this.amount = amount;
         this.timestamp = timestamp;
     }
@@ -50,6 +55,14 @@ public class Transaction {
 
     public void setTransactionType(TransactionType transactionType) {
         this.transactionType = transactionType;
+    }
+
+    public TransactionStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(TransactionStatus status) {
+        this.status = status;
     }
 
     public BigDecimal getAmount() {
@@ -75,22 +88,13 @@ public class Transaction {
         Transaction that = (Transaction) o;
         return Objects.equals(id, that.id) &&
                 transactionType == that.transactionType &&
+                status == that.status &&
                 Objects.equals(amount, that.amount) &&
                 Objects.equals(timestamp, that.timestamp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, transactionType, amount, timestamp);
-    }
-
-    @Override
-    public String toString() {
-        return "Transaction{" +
-                "id=" + id +
-                ", transactionType=" + transactionType +
-                ", amount=" + amount +
-                ", timestamp=" + timestamp +
-                '}';
+        return Objects.hash(id, transactionType, status, amount, timestamp);
     }
 }
